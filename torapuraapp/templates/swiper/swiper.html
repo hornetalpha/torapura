@@ -38,10 +38,11 @@
     $(function(){
         const Swiper_11 = new Swiper('#swiper-11', {
             /* 追加コード */
-            slidesPerView: 3,
-            /* 追加コード */
 
-            /* 追加コード */
+	    // 3つ同時に表示
+            slidesPerView: 3,
+
+	    // 自動スワイプ
             autoplay: {
 		        delay: 3000,
 		        stopOnLastSlide: false,
@@ -49,10 +50,12 @@
 		        pauseOnMouseEnter: true,
 		        reverseDirection: false
             },
-            /* 追加コード */
 
-	    /* 追加コード */
+            // ループ表示
             loop: true,
+
+	    // 現在のスライドを中央に表示
+            centeredSlides: true,
             /* 追加コード */
 
             navigation: {
