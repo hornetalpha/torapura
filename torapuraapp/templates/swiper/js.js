@@ -14,6 +14,10 @@
 //     },
 //     /* 追加コード */
 
+//     /* 追加コード */
+//     loop: true,
+//     /* 追加コード */
+
 //     navigation: {
 //           nextEl: '.swiper-button-next',
 //           prevEl: '.swiper-button-prev'
