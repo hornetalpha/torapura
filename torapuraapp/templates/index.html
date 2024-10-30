@@ -2,13 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>とらぷら</title>
+<title>ホーム</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="swiper/style.css">
+
 </head>
 <body>
 
   <!--ヘッダー-->
-  <header>
+  <header class="fixed">
    <!--<h1><img src="images/torapura.png" alt="とらぷら" width="300px"></h1>-->
     
     <nav id="global_navi">
@@ -37,12 +41,8 @@
     <div id="main">
       <section id="point">
         <h2>おすすめプラン</h2>
-        <iframe src="カルーセル.html" width="500" height="500"></iframe>
-        <section>
-
-        </section>
-        <section>
-        </section>
+        <iframe src="swiper/swiper.html" width="400" height="400"></iframe>
+        
     </div>
     <!--/メイン-->
 
@@ -63,6 +63,7 @@
     <small>&copy;  2024 とらぷら.</small>
   </footer>
   <!--/フッター-->
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
 </body>
 </html>
