@@ -28,18 +28,18 @@ p {
 header {
   width: 980px;
   margin: 0 auto;
+  padding: 0;
 }
 header h1 {
   float:left;
   margin: 3px 0 10px;
 }
-header #header_contact {
-  float: right;
-  margin: 35px 0;
-}
+
 
 #header ul {
   height: 50%;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -48,7 +48,7 @@ header #header_contact {
   width: 900px;
   clear: both;
   overflow: hidden;
-  margin: 16px auto;
+  margin: 0px auto;
 }
 #global_navi ul {
   list-style: none;
@@ -118,13 +118,17 @@ footer small {
 #breadcrumb { font-size: smaller; }
 #breadcrumb ol {
   list-style: none;
-  margin: 0 0 10px 0;
+  margin: 5 0 15px 0;
   padding: 0;
 }
-#breadcrumb ol li { display: inline; }
+
+#breadcrumb ol li { display: inline;
+  padding-left: 30px;
+}
+
 #breadcrumb ol li::after {
   content: ">";
-  padding-left: 7px;
+  padding-left: 13px;
 }
 #breadcrumb ol li:last-child::after { content: none; }
 
