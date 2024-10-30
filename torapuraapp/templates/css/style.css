@@ -91,6 +91,7 @@ header #header_contact {
   width: 980px;
   margin: 0 auto;
   overflow: hidden;
+  text-align: center;
 }
 
 #main {
