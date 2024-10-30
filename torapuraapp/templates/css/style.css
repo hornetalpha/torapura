@@ -19,6 +19,12 @@ p {
   line-height: 1.6;
 }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 header {
   width: 980px;
   margin: 0 auto;
