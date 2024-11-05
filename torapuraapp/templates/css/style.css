@@ -160,3 +160,28 @@ a:hover img {
 #access h3 {
   display: block;
 }
+
+/* ドロップダウン用 */
+.menu-item {
+  max-height: 64px;
+}
+
+.menu-item:hover {
+  max-height: none;
+}
+
+/* メニューアイテムのホバースタイル */
+.menu-item:hover .drop-menu-list {
+  opacity: 1; /* 不透明度を最大に */
+  transition: opacity .3s, visibility .3s; /* アニメーション設定 */
+  visibility: visible; /* 下層メニューを表示 */
+  max-height: none;
+}
+
+.drop-menu-list {
+  top: 100%;
+  opacity: 0; /* 不透明度を最小に */
+  transition: opacity .3s, visibility .3s; /* アニメーション設定 */
+  visibility: hidden; /* 下層メニューを非表示 */
+}
+/* ドロップダウン用 */
