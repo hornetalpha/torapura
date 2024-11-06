@@ -45,8 +45,8 @@ header h1 {
 
 
 #global_navi {
-  width: 900px;
-  clear: both;
+  position: fixed;
+  top: 0;
   overflow: hidden;
   margin: 0px auto;
 }
