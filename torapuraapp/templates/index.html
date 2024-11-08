@@ -1,4 +1,95 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ホーム</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="swiper/swiperstyle.css">
+
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar">
+        <h2 class="logo">TravelPlanner</h2>
+        <ul class="menu">
+          <li class="current"><a href="index.html">ホーム</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+          <li><a href="plan.html">プラン作成</a></li>
+
+          <li class="menu-item">
+            <a href="contact.html">お問い合わせ</a>
+            <ul class="drop-menu-list">
+               <li class="drop-menu-item">
+                  <a href="contact_company.html">企業向け</a>
+               </li>
+               <li class="drop-menu-item">
+                  <a href="contact_user.html">利用者向け</a>
+               </li>
+            </ul>
+          </li>
+         
+        </ul>
+      </nav>
+    </div>
+
+
+
+    <script>
+      const menu = document.querySelector(".menu");
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset >= menu.offsetTop) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      });
+    </script>
+
+
+<div id="wrapper">
+   <!--メイン-->
+   <div id="main">
+     <section id="point">
+       <h2>おすすめプラン</h2>
+       <iframe src="swiper/swiper.html" width="400" height="400"></iframe>
+       
+   </div>
+</div>
+
+
+
+    <footer>
+      <div id="footer_nav">
+         <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="gallery.html">ギャラリー</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="plan.html">プラン作成</a></li>
+         </ul>
+      </div>
+      <small>&copy; 2024とらぷら.</small>
+    </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -80,3 +171,4 @@
   
 </body>
 </html>
+ -->
