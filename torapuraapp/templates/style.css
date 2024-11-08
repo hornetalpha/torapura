@@ -147,8 +147,8 @@ nav.sticky ul {
 
 /* お問い合わせフォーム */
 form {
-  width: 50%;
-  margin: 10% auto;
+  width: 60%;
+  margin: 5% auto;
   min-width: 9rem;
 }
 
@@ -159,7 +159,7 @@ input, textarea {
   border: none;
   margin: 0.5rem 0;
   padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
+  border-radius: 2rem;
   background: #b6e1f3;
   color: rgb(94, 96, 95);
 }
