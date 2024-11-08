@@ -1,4 +1,4 @@
-@charset "utf-8";
+/* @charset "utf-8";
 /* 基本要素 */
 body {
   margin: 0;
@@ -185,3 +185,4 @@ a:hover img {
   visibility: hidden; /* 下層メニューを非表示 */
 }
 /* ドロップダウン用 */
+ */
