@@ -35,16 +35,28 @@
        
       </ul>
     </nav>
-    
+   </div>
 
-    <div id="breadcrumb">
-      <ol>
-         <li><a href="index.html">ホーム</a></li>
-         <li><a href="contact.html">お問い合わせ</a></li>
-         <li>企業向け</li>
-      </ol>
-    </div>
-  </header>
+  <nav>
+    <ol class="breadcrumb">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="/.../">お問い合わせ</a></li>
+      <li>企業向け</li>
+    </ol>
+  </nav>
+
+  <main>
+    <h2>お問い合わせフォーム(企業向け)</h2>
+
+    <form action="">
+      <input type="email" placeholder="メールアドレス" name="company_email" required>
+      <input type="text" placeholder="企業名" name="company_name" required>
+      <input type="text" placeholder="件名" name="title" required>
+      <textarea placeholder="本文" name="message" required></textarea>
+      <input type="file" placeholder="写真を選択"  name="image" required>
+      <input type="submit" value="送信">
+  </main>
+    
 
 
   <!--フッター-->
