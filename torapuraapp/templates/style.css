@@ -168,7 +168,13 @@ input, textarea {
   background: #75c2f2;
   color: rgb(94, 96, 95);
 }
+
+::placeholder {
+  color: #fff;
+}
 /* お問い合わせフォーム */
+
+
 
 
 
