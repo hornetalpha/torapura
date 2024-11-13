@@ -1,14 +1,27 @@
 from django.shortcuts import render
-# django.views.generic.baseからTemplateViewをインポート
 from django.views.generic.base import TemplateView
 
+
 class IndexView(TemplateView):
-    '''トップページのビュー
-    
-    テンプレートのレンダリングに特化したTemplateViewを継承
-    
-    Attributes:
-        template_name:レンダリングするテンプレート
-    '''
     # index.htmlをレンダリングする
-    template_name = 'index.html'
+    template_name = "index.html"
+
+
+class GalleryView(TemplateView):
+    template_name = "gallery.html"
+
+
+class ContactView(TemplateView):
+    template_name = "contact.html"
+
+
+class ContactUserView(TemplateView):
+    template_name = "contact_user.html"
+
+
+class ContactCompanyView(TemplateView):
+    template_name = "contact_company.html"
+
+
+class PlanView(TemplateView):
+    template_name = "plan.html"

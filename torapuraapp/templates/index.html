@@ -18,17 +18,17 @@
         <h2 class="logo">TravelPlanner</h2>
         <ul class="menu">
           <li class="current"><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
-          <li><a href="gallery.html">ギャラリー</a></li>
-          <li><a href="plan.html">プラン作成</a></li>
+          <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+          <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
 
           <li class="menu-item">
-            <a href="contact.html">お問い合わせ</a>
+            <a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a>
             <ul class="drop-menu-list">
                <li class="drop-menu-item">
-                  <a href="contact_company.html">企業向け</a>
+                  <a href="{% url 'torapuraapp:contact_company' %}">企業向け</a>
                </li>
                <li class="drop-menu-item">
-                  <a href="contact_user.html">利用者向け</a>
+                  <a href="{% url 'torapuraapp:contact_user'}">利用者向け</a>
                </li>
             </ul>
           </li>
@@ -39,7 +39,7 @@
   
     <nav>
       <ol class="breadcrumb">
-        <li><a href="/">ホーム</a></li>
+        <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
         <li> </li>
       </ol>
     </nav>
@@ -76,10 +76,10 @@
     <footer>
       <div id="footer_nav">
          <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="gallery.html">ギャラリー</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
-            <li><a href="plan.html">プラン作成</a></li>
+            <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+            <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+            <li><a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a></li>
+            <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
          </ul>
       </div>
       <small>&copy; 2024とらぷら.</small>

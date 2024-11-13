@@ -13,8 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" href="css/swiperstyle.css">
-    <script src="/js.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="/script.js"></script> -->
 </head>
 <body>
     <div id="swiper-11" class="swiper swiper-11">
@@ -38,11 +38,10 @@
     $(function(){
         const Swiper_11 = new Swiper('#swiper-11', {
             /* 追加コード */
-
-	    // 3つ同時に表示
             slidesPerView: 3,
+            /* 追加コード */
 
-	    // 自動スワイプ
+            /* 追加コード */
             autoplay: {
 		        delay: 3000,
 		        stopOnLastSlide: false,
@@ -50,16 +49,6 @@
 		        pauseOnMouseEnter: true,
 		        reverseDirection: false
             },
-
-            // ループ表示
-            loop: true,
-
-	    // 現在のスライドを中央に表示
-            centeredSlides: true,
-
-            // スライドの間隔
-            spaceBetween: 5,
-		
             /* 追加コード */
 
             navigation: {
