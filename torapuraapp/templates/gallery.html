@@ -1,161 +1,65 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>ギャラリー</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ギャラリー</title>
+    <link rel="stylesheet" href={% static 'css/style.css' %} />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="../static/css/style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar">
+        <h2 class="logo">TravelPlanner</h2>
+        <ul class="menu">
+          <li><a href="index.html">ホーム</a></li>
+          <li class="current"><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+          <li><a href="plan.html">プラン作成</a></li>
 
-</head>
-<body>
-  <div class="header">
-    <nav class="navbar">
-      <h2 class="logo">TravelPlanner</h2>
-      <ul class="menu">
-        <li><a href="index.html">ホーム</a></li>
-        <li class="current"><a href="gallery.html">ギャラリー</a></li>
-        <li><a href="plan.html">プラン作成</a></li>
-
-        <li class="menu-item">
-          <a href="contact.html">お問い合わせ</a>
-          <ul class="drop-menu-list">
-             <li class="drop-menu-item">
-                <a href="contact_company.html">企業向け</a>
-             </li>
-             <li class="drop-menu-item">
-                <a href="contact_user.html">利用者向け</a>
-             </li>
-          </ul>
-        </li>
-       
-      </ul>
-    </nav>
-  </div>
-
-  <nav>
-    <ol class="breadcrumb">
-      <li><a href="index.html">ホーム</a></li>
-      <li>ギャラリー</li>
-    </ol>
-  </nav>
-
-
-  <main>
-    <div class="layout modal">
-      <div class="modal__cards">
-        <!-- モーダルウィンドウを開くカード -->
-        <div class="modal__card card">
-          <div class="card__picture">
-            <img src="https://soya-blog.com/wp-content/themes/soya-blog/assets/images/jquery/modal/modal-picture-01.png" alt="森と湖">
-          </div>
-          <div class="card__main">
-            <h2 class="card__title">森の中にある湖</h2>
-            <p class="card__text">これは東北の山奥にある静寂に包まれた森の中の美しい湖です。自然のエネルギーを感じるのには最適な場所です。</p>
-          </div>
-        </div>
-        
-        <!-- モーダルウィンドウを開くカード -->
-        <div class="modal__card card">
-          <div class="card__picture">
-            <img src="https://soya-blog.com/wp-content/themes/soya-blog/assets/images/jquery/modal/modal-picture-02.png" alt="砂漠">
-          </div>
-          <div class="card__main">
-            <h2 class="card__title">アフリカの砂漠</h2>
-            <p class="card__text">砂漠は降水量が非常に少ない乾燥地帯です。砂は軽くサラサラしていますが、砂漠を歩くのは簡単ではありません。</p>
-          </div>
-        </div>
-        
-        <!-- モーダルウィンドウを開くカード -->
-        <div class="modal__card card">
-          <div class="card__picture">
-            <img src="https://soya-blog.com/wp-content/themes/soya-blog/assets/images/jquery/modal/modal-picture-03.png" alt="コロッセオ">
-          </div>
-          <div class="card__main">
-            <h2 class="card__title">コロッセオ</h2>
-            <p class="card__text">コロッセオは古代ローマ時代に建てられた円形闘技場です。今はイタリアを代表する有名な観光名所になっています。</p>
-          </div>
-        </div>
-      </div>
+          <li class="menu-item">
+            <a href="contact.html">お問い合わせ</a>
+            <ul class="drop-menu-list">
+               <li class="drop-menu-item">
+                  <a href="contact_company.html">企業向け</a>
+               </li>
+               <li class="drop-menu-item">
+                  <a href="contact_user.html">利用者向け</a>
+               </li>
+            </ul>
+          </li>
+         
+        </ul>
+      </nav>
     </div>
   
-    <!-- モーダルウィンドウが開いた時の背景 -->
-    <div id="modal-visible" class="modal__background">
-      <div id="create-card" class="card js-card-close">
-        <div id="modal-picture" class="card__picture">
-          <img src="#" alt="">
-        </div>
-        <div class="card__main">
-          <h2 id="modal-title" class="card__title"></h2>
-          <p id="modal-text" class="card__text"></p>
-        </div>
-        <!-- モーダルウィンドウを閉じるボタン -->
-        <div id="modal-close" class="modal__close">
-          <div class="modal__icon"></div>
-        </div>
+    <nav>
+      <ol class="breadcrumb">
+        <li><a href="/">ホーム</a></li>
+        <li>ギャラリー</li>
+      </ol>
+    </nav>
+
+
+
+
+
+
+
+
+    <footer>
+      <div id="footer_nav">
+         <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="gallery.html">ギャラリー</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="plan.html">プラン作成</a></li>
+         </ul>
       </div>
-    </div>
-  </main>
+      <small>&copy; 2024とらぷら.</small>
+    </footer>
 
-  <script>
-    $(function(){
-
-      var card = $('.card'),
-      modal_visible = $('#modal-visible'),
-      close = $('#modal-close');
-
-      card.on('click', function() {
-        // クリックされたカードが js-card-close クラスを持っているかを確認
-        // 既に js-card-close クラスがある場合、モーダルを表示しない
-        if ($(this).hasClass('js-card-close')) {
-          return;
-        }
-
-        // クリックしたカードの情報を取得
-        var imgSrc = $(this).find('.card__picture img').attr('src');
-        var imgAlt = $(this).find('.card__picture img').attr('alt');
-        var title = $(this).find('.card__title').text();
-        var text = $(this).find('.card__text').text();
-
-        // モーダルで表示したカードに情報を反映
-        $('#modal-picture img').attr('src', imgSrc).attr('alt', imgAlt);
-        $('#modal-title').text(title);
-        $('#modal-text').text(text);
-
-        modal_visible.addClass('visible');
-      });
-
-      // ×アイコンをクリックしたらモーダルを閉じる
-      close.on('click', function(){
-        modal_visible.removeClass('visible');
-      });
-
-      // モーダルの外側をクリックしたらモーダルを閉じる
-      modal_visible.on('click', function(event) {
-        // クリックした要素がカードの部分であれば処理を中止する
-        if ($(event.target).closest(card).length === 0) {
-          modal_visible.removeClass('visible');
-        }
-      });
-    });
-  </script>
-
-
-  <!--フッター-->
-  <footer>
-   <div id="footer_nav">
-     <ul>
-       <li><a href="index.html">HOME</a></li>
-       <li><a href="gallery.html">ギャラリー</a></li>
-       <li><a href="contact.html">お問い合わせ</a></li>
-       <li><a href="plan.html">プラン作成</a></li>
-      
-     </ul>
-   </div>
-   <small>&copy;  2024 とらぷら.</small>
-  </footer>
- <!--/フッター-->
-
-</body>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
 </html>
