@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,7 +6,7 @@
 <title>とらぷら|お問い合わせ(利用者向け)</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href={% static 'css/style.css' %} />
 
 </head>
 <body> 
@@ -24,7 +25,7 @@
                 <a href="contact_company.html">企業向け</a>
              </li>
              <li class="drop-menu-item">
-                <li class="current"><a href="contact_user.html">利用者向け</a>
+                <li class="current"><a href="{% url 'torapuraapp:contact_user' %}">利用者向け</a>
              </li>
           </ul>
         </li>
