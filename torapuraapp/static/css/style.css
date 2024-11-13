@@ -167,7 +167,7 @@ input, textarea {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   background: #75c2f2;
-  color: rgb(94, 96, 95);
+  color: #fff;
 }
 
 ::placeholder {
