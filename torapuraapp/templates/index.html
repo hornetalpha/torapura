@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +8,8 @@
     <title>ホーム</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="swiper/swiperstyle.css">
+    <link rel="stylesheet" href={% static 'css/style.css' %} />
+    <link rel="stylesheet" href={% static 'swiper/css/swiperstyle.css' %} />
 
   </head>
   <body>
@@ -16,7 +17,7 @@
       <nav class="navbar">
         <h2 class="logo">TravelPlanner</h2>
         <ul class="menu">
-          <li class="current"><a href="index.html">ホーム</a></li>
+          <li class="current"><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
           <li><a href="gallery.html">ギャラリー</a></li>
           <li><a href="plan.html">プラン作成</a></li>
 
@@ -63,7 +64,7 @@
    <div id="main">
      <section id="point">
        <h2>おすすめプラン</h2>
-       <iframe src="../static/swiper/swiper.html" width="400" height="400"></iframe>
+       <iframe src="{% static 'swiper/swiper.html' %}" width="400" height="400"></iframe>
        
    </div>
 </div>
@@ -87,14 +88,6 @@
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
