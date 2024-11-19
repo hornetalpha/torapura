@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # torapuraappを追加する
     'torapuraapp.apps.TorapuraappConfig',
+    'import_export',
 ]
 
 MIDDLEWARE = [
