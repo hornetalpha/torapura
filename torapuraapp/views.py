@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-
+from .models import Plan
+from .forms import PlanSearchForm
+import random
 
 class IndexView(TemplateView):
     # index.htmlをレンダリングする
@@ -25,3 +27,47 @@ class ContactCompanyView(TemplateView):
 
 class PlanView(TemplateView):
     template_name = "plan.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        form = PlanSearchForm(self.request.GET or None)
+        context['form'] = form
+        return context
+
+class PlanResultView(TemplateView):
+    template_name = "plan_result.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        form = PlanSearchForm(self.request.GET or None)
+        if form.is_valid():
+            place = form.cleaned_data['place']
+            done = form.cleaned_data['done']
+            person = form.cleaned_data['person']
+            day = form.cleaned_data['day']
+            keyword = form.cleaned_data['keyword']
+            plans = Plan.objects.filter(place=place, done=done, person=person, day=day)
+            if keyword:
+                plans = plans.filter(plan_detail__icontains=keyword)
+            plans = list(plans)
+            if plans:
+                context['plan'] = random.choice(plans)
+            else:
+                context['plan'] = None
+            # 選んだ条件をコンテキストに追加
+            # doneの値を置き換え
+            if done == 'activity':
+                done_display = 'スポーツ'
+            else:
+                done_display = '観光'
+            context['selected_conditions'] = {
+                'place': place,
+                'done': done_display,
+                'person': person,
+                'day': day,
+                'keyword': keyword,
+            }
+        else:
+            context['plan'] = None
+            context['selected_conditions'] = {}
+        return context
