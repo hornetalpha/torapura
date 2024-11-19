@@ -235,6 +235,34 @@ footer small {
   margin-bottom: 15px;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 子要素を中央に揃える */
+  margin-top: 50px;
+}
+.form-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.form-group {
+  margin: 0 10px;
+}
+.form-group select {
+  width: 200px; /* プルダウンメニューと入力フィールドの幅を統一 */
+}
+
+.plan-result {
+  width: fit-content;
+  margin: 0 auto;
+}
+.plan-detail {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 input {
   display: block;
   font-weight: bold;
