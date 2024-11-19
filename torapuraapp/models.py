@@ -11,3 +11,20 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+        
+class Plan(models.Model):
+    place = models.CharField("都道府県", max_length=200)
+    done = models.CharField("ジャンル", max_length=200)
+    person = models.CharField("人数", max_length=200)
+    day = models.CharField("旅行日数", max_length=200)
+    plan_name = models.CharField("プラン名", max_length=200)
+    plan_detail = models.TextField("プラン詳細")
+    typeno = models.IntegerField
+
+    class Meta:
+        db_table = 'plan'
+        verbose_name = 'プラン'
+        verbose_name_plural = 'プラン一覧'
+
+        def __str__(self):
+            return self.name
