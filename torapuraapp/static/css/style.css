@@ -331,3 +331,154 @@ input {
   .swiper .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
     background-color: #fff;
   }
+
+/* モーダル */
+/*リセットCSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.layout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: calc(1000px + 30px * 2);
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.modal__cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 横に3つまで並ぶ */
+	justify-content: center;
+	gap: 30px;
+}
+
+.card {
+	cursor: pointer;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+
+.card__picture {
+	height: 180px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 10px 10px 0 0;
+	}
+}
+
+.card__main {
+	padding: 20px 18px;
+	border-radius: 0 0 10px 10px;
+	background-color: #fff;
+}
+
+.card__title {
+	font-size: 18px;
+	color: #000;
+}
+
+.card__text {
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+.card__date {
+  font-size: 9px;
+  color: #696969;
+}
+
+/* 一覧画面のカードでは非表示 */
+.modal__cards .card__text,
+.modal__cards .card__date {
+  display: none;
+}
+
+/* モーダル内では表示 */
+#modal-visible .card__text,
+#modal-visible .card__date {
+  display: block;
+}
+
+
+.modal__background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 30px;
+	opacity: 0;
+	background: rgba(0, 0, 0, 50%);
+	visibility: hidden;
+	transition: 0.3s;
+}
+
+.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+#modal-visible > .card {
+	cursor: default;
+	position: relative;
+	max-width: 500px;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+
+.modal__close {
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.modal__icon {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 48%;
+		left: calc((100% - 28px) / 2);
+		transform: rotate(45deg);
+		width: 28px;
+		height: 3px;
+		background-color: #000;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 48%;
+		left: calc((100% - 28px) / 2);
+		transform: rotate(-45deg);
+		width: 28px;
+		height: 3px;
+		background-color: #000;
+	}
+}
+/* モーダル */
