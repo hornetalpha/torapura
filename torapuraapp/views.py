@@ -4,6 +4,7 @@ from .models import Plan
 from .forms import PlanSearchForm
 import random
 from .models import Post
+from django.views.generic import ListView
 
 class IndexView(TemplateView):
     # index.htmlをレンダリングする
