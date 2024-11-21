@@ -5,6 +5,12 @@ from import_export.formats import base_formats
 from .models import Post
 from .models import Plan
 
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ("title", "date")  # リスト表示で日付も表示
+    fields = ("title", "content", "image", "date")  # 管理画面で編集可能なフィールド
+    ordering = ("date",)  # 日付の昇順で表示
+
 class PlanResource(resources.ModelResource):
     # Modelに対するdjango-import-exportの設定
     class Meta:
