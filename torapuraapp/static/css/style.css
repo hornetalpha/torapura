@@ -405,14 +405,12 @@ p {
 }
 
 /* 一覧画面のカードでは非表示 */
-.modal__cards .card__text,
-.modal__cards .card__date {
+.modal__cards .card__text {
   display: none;
 }
 
 /* モーダル内では表示 */
-#modal-visible .card__text,
-#modal-visible .card__date {
+#modal-visible .card__text {
   display: block;
 }
 
