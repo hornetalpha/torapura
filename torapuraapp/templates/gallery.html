@@ -34,9 +34,6 @@
             </li>
           </ul>
         </li>
-
-        
-
       </ul>
     </nav>
   </div>
@@ -64,8 +61,7 @@
           <div class="card__main">
             <h2 class="card__title"><a>{{ post.title }}</a></h2>
             <p class="card__text">{{ post.content|truncatechars:100 }}</p>
-            <p>　</p>
-            <p class="card__date">作成日:　{{ post.date }}</p>
+            <p class="card__date">{{ post.date }}</p>
           </div>
         </div>
         {% endfor %}
