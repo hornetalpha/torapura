@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-from .views import GalleryView
+from .views import GalleryView, PlanView, PlanResultView
 
 # URLconfのURLパターンを逆引きできるようにアプリ名を登録
 app_name = "torapuraapp"
