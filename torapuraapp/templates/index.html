@@ -13,6 +13,8 @@
 
   </head>
   <body>
+    
+  </body>
     <div class="header">
       <nav class="navbar">
         <h2 class="logo">TravelPlanner</h2>
@@ -46,7 +48,7 @@
 
 
 
-    <script>
+    <!-- <script>
       const menu = document.querySelector(".menu");
       const navbar = document.querySelector(".navbar");
       window.addEventListener("scroll", () => {
@@ -56,7 +58,197 @@
           navbar.classList.remove("sticky");
         }
       });
-    </script>
+    </script> -->
+
+
+<div id="wrapper">
+   <!--メイン-->
+   <div id="main">
+     <section id="point">
+       <h2>おすすめプラン</h2>
+       <iframe src="{% static 'swiper/swiper.html' %}" width="400" height="400"></iframe>
+       
+   </div>
+</div>
+
+
+
+
+
+    <footer>
+      <div id="footer_nav">
+         <ul>
+            <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+            <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+            <li><a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a></li>
+            <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+         </ul>
+      </div>
+      <small>&copy; 2024とらぷら.</small>
+    </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ホーム</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href={% static 'css/style.css' %} />
+    <link rel="stylesheet" href={% static 'swiper/css/swiperstyle.css' %} />
+
+  </head>
+  <body>
+    
+  </body>
+    <div class="header">
+      <nav class="navbar">
+        <h2 class="logo">TravelPlanner</h2>
+        <ul class="menu">
+          <li class="current"><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+          <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+          <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+
+          <li class="menu-item">
+            <a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a>
+            <ul class="drop-menu-list">
+               <li class="drop-menu-item">
+                  <a href="{% url 'torapuraapp:contact_company' %}">企業向け</a>
+               </li>
+               <li class="drop-menu-item">
+                  <a href="{% url 'torapuraapp:contact_user'}">利用者向け</a>
+               </li>
+            </ul>
+          </li>
+         
+        </ul>
+      </nav>
+    </div>
+  
+    <nav>
+      <ol class="breadcrumb">
+        <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+        <li> </li>
+      </ol>
+    </nav>
+
+
+
+    <!-- <script>
+      const menu = document.querySelector(".menu");
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset >= menu.offsetTop) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      });
+    </script> -->
+
+
+<div id="wrapper">
+   <!--メイン-->
+   <div id="main">
+     <section id="point">
+       <h2>おすすめプラン</h2>
+       <iframe src="{% static 'swiper/swiper.html' %}" width="400" height="400"></iframe>
+       
+   </div>
+</div>
+
+
+
+
+
+    <footer>
+      <div id="footer_nav">
+         <ul>
+            <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+            <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+            <li><a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a></li>
+            <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+         </ul>
+      </div>
+      <small>&copy; 2024とらぷら.</small>
+    </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ホーム</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href={% static 'css/style.css' %} />
+    <link rel="stylesheet" href={% static 'swiper/css/swiperstyle.css' %} />
+
+  </head>
+  <body>
+    
+  </body>
+    <div class="header">
+      <nav class="navbar">
+        <h2 class="logo">TravelPlanner</h2>
+        <ul class="menu">
+          <li class="current"><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+          <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+          <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+
+          <li class="menu-item">
+            <a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a>
+            <ul class="drop-menu-list">
+               <li class="drop-menu-item">
+                  <a href="{% url 'torapuraapp:contact_company' %}">企業向け</a>
+               </li>
+               <li class="drop-menu-item">
+                  <a href="{% url 'torapuraapp:contact_user'}">利用者向け</a>
+               </li>
+            </ul>
+          </li>
+         
+        </ul>
+      </nav>
+    </div>
+  
+    <nav>
+      <ol class="breadcrumb">
+        <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+        <li> </li>
+      </ol>
+    </nav>
+
+
+
+    <!-- <script>
+      const menu = document.querySelector(".menu");
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset >= menu.offsetTop) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      });
+    </script> -->
 
 
 <div id="wrapper">
