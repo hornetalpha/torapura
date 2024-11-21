@@ -3,6 +3,7 @@ from django.views.generic.base import TemplateView
 from .models import Plan
 from .forms import PlanSearchForm
 import random
+from .models import Post
 
 class IndexView(TemplateView):
     # index.htmlをレンダリングする
@@ -24,6 +25,10 @@ class ContactUserView(TemplateView):
 class ContactCompanyView(TemplateView):
     template_name = "contact_company.html"
 
+class Post_List_View(ListView):
+    template_name = "gallery.html"
+    model = Post
+    context_object_name = "posts"
 
 class PlanView(TemplateView):
     template_name = "plan.html"
