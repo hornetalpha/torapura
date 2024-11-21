@@ -1,65 +1,155 @@
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ギャラリー</title>
-    <link rel="stylesheet" href={% static 'css/style.css' %} />
+<html lang="ja">
 
-  </head>
-  <body>
-    <div class="header">
-      <nav class="navbar">
-        <h2 class="logo">TravelPlanner</h2>
-        <ul class="menu">
-          <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
-          <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
-          <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+<head>
+  <meta charset="UTF-8">
+  <title>ギャラリー</title>
 
-          <li class="menu-item">
-            <a href="{% url 'torapuraapp:contact'}">お問い合わせ</a>
-            <ul class="drop-menu-list">
-               <li class="drop-menu-item">
-                  <a href="{% url 'torapuraapp:contact_company' %}">企業向け</a>
-               </li>
-               <li class="drop-menu-item">
-                  <a href="{% url 'torapuraapp:contact_user' %}">利用者向け</a>
-               </li>
-            </ul>
-          </li>
-         
-        </ul>
-      </nav>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="header">
+    <nav class="navbar">
+      <h2 class="logo">TravelPlanner</h2>
+      <ul class="menu">
+        <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+        <li class="current"><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+
+        <li class="menu-item">
+          <a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a>
+          <ul class="drop-menu-list">
+            <li class="drop-menu-item">
+              <a href="{% url 'torapuraapp:contact_company' %}">企業向け</a>
+            </li>
+            <li class="drop-menu-item">
+              <a href="{% url 'torapuraapp:contact_user' %}">利用者向け</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <nav>
+    <ol class="breadcrumb">
+      <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
+      <li>ギャラリー</li>
+    </ol>
+  </nav>
+
+
+  <main>
+    <h1>ブログ投稿一覧</h1>
+    <div class="layout modal">
+      <div class="modal__cards">
+        {% for post in posts %}
+        <!-- モーダルウィンドウを開くカード -->
+        <div class="modal__card card">
+          <div class="card__picture">
+            {% if post.image %}
+              <img src="{{ post.image.url }}" alt="{{ post.title }}">
+            {% endif %}
+          </div>
+          <div class="card__main">
+            <h2 class="card__title"><a>{{ post.title }}</a></h2>
+            <p class="card__text">{{ post.content|truncatechars:100 }}</p>
+            <p class="card__date">{{ post.date }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
   
-    <nav>
-      <ol class="breadcrumb">
-        <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
-        <li>ギャラリー</li>
-      </ol>
-    </nav>
-
-
-
-
-
-
-
-
-    <footer>
-      <div id="footer_nav">
-         <ul>
-          <li><a href="{% url 'torapuraapp:index' %}">HOME</a></li>
-          <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
-          <li><a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a></li>
-          <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
-         </ul>
+    <!-- モーダルウィンドウが開いた時の背景 -->
+    <div id="modal-visible" class="modal__background">
+      <div id="create-card" class="card js-card-close">
+        <div id="modal-picture" class="card__picture">
+          <img src="#" alt="">
+        </div>
+        <div class="card__main">
+          <h2 id="modal-title" class="card__title"></h2>
+          <p id="modal-text" class="card__text"></p>
+          <p id="modal-date" class="card__date"></p>
+        </div>
+        <!-- モーダルウィンドウを閉じるボタン -->
+        <div id="modal-close" class="modal__close">
+          <div class="modal__icon"></div>
+        </div>
       </div>
-      <small>&copy; 2024とらぷら.</small>
-    </footer>
+    </div>
 
-   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  </body>
+    <script>
+      $(function(){
+  
+        var card = $('.card'),
+        modal_visible = $('#modal-visible'),
+        close = $('#modal-close');
+  
+        card.on('click', function() {
+          // クリックされたカードが js-card-close クラスを持っているかを確認
+          // 既に js-card-close クラスがある場合、モーダルを表示しない
+          if ($(this).hasClass('js-card-close')) {
+            return;
+          }
+  
+          // クリックしたカードの情報を取得
+          var imgSrc = $(this).find('.card__picture img').attr('src');
+          var imgAlt = $(this).find('.card__picture img').attr('alt');
+          var title = $(this).find('.card__title').text();
+          var text = $(this).find('.card__text').text();
+          var date = $(this).find('.card__date').text();
+  
+          // モーダルで表示したカードに情報を反映
+          $('#modal-picture img').attr('src', imgSrc).attr('alt', imgAlt);
+          $('#modal-title').text(title);
+          $('#modal-text').text(text);
+          $('#modal-date').text(date);
+  
+          modal_visible.addClass('visible');
+        });
+  
+        // ×アイコンをクリックしたらモーダルを閉じる
+        close.on('click', function(){
+          modal_visible.removeClass('visible');
+        });
+  
+        // モーダルの外側をクリックしたらモーダルを閉じる
+        modal_visible.on('click', function(event) {
+          // クリックした要素がカードの部分であれば処理を中止する
+          if ($(event.target).closest(card).length === 0) {
+            modal_visible.removeClass('visible');
+          }
+        });
+      });
+    </script>
+  </main>
+
+  <!--フッター-->
+  <footer>
+    <div id="footer_nav">
+      <ul>
+        <li><a href="{% url 'torapuraapp:index' %}">HOME</a></li>
+        <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
+        <li><a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a></li>
+        <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+
+      </ul>
+    </div>
+    <small>&copy; 2024 とらぷら.</small>
+  </footer>
+  <!--/フッター-->
+
+</body>
+
 </html>
