@@ -119,10 +119,12 @@
     <footer>
         <div id="footer_nav">
            <ul>
-              <li><a href="{% url 'torapuraapp:index' %}">ホーム</a></li>
-              <li><a href="{% url 'torapuraapp:gallery' %}">ギャラリー</a></li>
-              <li><a href="{% url 'torapuraapp:contact' %}">お問い合わせ</a></li>
-              <li><a href="{% url 'torapuraapp:plan' %}">プラン作成</a></li>
+            <li><a href="{% url 'torapuraapp:admin_index' %}">ホーム</a></li>
+            <li><a href="{% url 'torapuraapp:plan' %}">フォトギャラリー投稿</a></li>
+            <li><a href="{% url 'torapuraapp:gallery' %}">フォトギャラリー一覧</a></li>
+            <li><a href="{% url 'torapuraapp:logout' %}">お問い合わせ確認</a></li>
+            <li><a href="{% url 'torapuraapp:contact' %}">管理者一覧</a></li>
+            <li><a href="{% url 'torapuraapp:contact' %}">ログアウト</a></li>
            </ul>
         </div>
         <small>&copy; 2024とらぷら.</small>
